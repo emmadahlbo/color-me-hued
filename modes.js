@@ -63,6 +63,13 @@ function updateCurrentColor(color) {
 
 // ----------------------------------------------------------------------------------
 
+/* 
+Changes the color into the next in the rainbow sequence.
+r, g, b are the color values. 
+dir indicates which value should be changed and in which direction:
+    - number indicates which color value should change (1 = r, 2 = g, 3 = b)
+    - sign indicates which direction (+ = increase, - = decrease)
+*/
 function transformColor(r, g, b, dir) {
     switch (dir) {
         case 1:
@@ -112,8 +119,5 @@ function toColorHex(r, g, b) {
 
 function hexToString(hex) {
     let str = hex.toString(16);
-    if (str.length == 1) {
-        str = "0" + str;
-    }
-    return str;
+    return (str.length == 2) ? str : "0" + str;
 }
