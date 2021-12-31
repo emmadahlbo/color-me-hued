@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+<head>
+    <title>Color Me Hued</title>
+    <link rel="stylesheet" href="coloris.min.css" />
+    <script src="coloris.min.js"></script>
+    <script src="modes.js"></script>
+    <script>
+        Coloris({
+            el: '.coloris',
+            theme: 'dark',
+            swatches: [
+                "red",
+                "orange",
+                "yello",
+                "green",
+                "blue",
+                "purple"
+            ],
+            format: 'mixed', // hex, rgb, auto, or mixed
+        });
+    </script>
+
+    <style>
+        .clickable {
+            margin: 10px;
+            background-color: transparent;
+            width: 18vw;
+            height: 8vh;
+            border-radius: 3px;
+            border: 0px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .05), 0 5px 20px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            text-align: center;
+            font-size: medium;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body id="background" style="min-height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <button class="clickable" id="party" onclick="toggleModeChoice(id)">Party Mode!</button>
+    <button class="clickable" id="rainbow" onclick="toggleModeChoice(id)">Rainbow Mode!</button>
+    <input type="text" id="color" class="coloris clickable" onchange="handleColorChoice()" />
+</body>
+
+</html>
